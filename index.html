@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+    <link rel="stylesheet" href="../calculator/style.css">
+</head>
+<body>
+    <!----------------------------------------Calculator Part---------------------------------->
+    <div class="navbar">
+        <h1>Welcome to >>>>>> FADEL AGLI's  Calculator</h1>
+    </div>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output-screen">
+            <button onclick="Clear()" >Cl</button>
+            <button onclick="Del()" >DEL</button>
+            <button onclick="display('%')" >%</button>
+            <button onclick="display('/')" >/</button>
+            <button onclick="display('7')" >7</button>
+            <button onclick="display('8')" >8</button>
+            <button onclick="display('9')" >9</button>
+            <button onclick="display('*')" >*</button>
+            <button onclick="display('4')" >4</button>
+            <button onclick="display('5')" >5</button>
+            <button onclick="display('6')" >6</button>
+            <button onclick="display('-')" >-</button>
+            <button onclick="display('1')" >1</button>
+            <button onclick="display('2')" >2</button>
+            <button onclick="display('3')" >3</button>
+            <button onclick="display('+')" >+</button>
+            <button onclick="display('.')" >.</button>
+            <button onclick="display('0')" >0</button>
+            <button onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+    <!-------------------------------------------------   script for the Calculator---------------------->
+<script>
+    let outputScreen = document.getElementById("output-screen");
+
+    function display(num) {
+        outputScreen.value += num;
+    }
+
+    function calculate() {
+        try {
+            outputScreen.value = eval(outputScreen.value);
+        } catch (err) {
+            alert("Invalid input");
+        }
+    }
+
+    function clearScreen() {
+        outputScreen.value = "";
+    }
+
+    function Del() {
+        outputScreen.value = outputScreen.value.slice(0, -1);
+    }
+</script>
+<hr>
+<hr>
+
+<!--------------------------------------Color Software Part------------------------>
+
+
+  <h1>Learn Colors</h1>
+  <div id="selected-color-box"></div>
+  <div class="color-box-container">
+    <div class="color-box" id="green" onclick="changeColor('green')">green</div>
+    <div class="color-box" id="blue" onclick="changeColor('blue')">blue</div>
+    <div class="color-box" id="yellow" onclick="changeColor('yellow')">yellow</div>
+    <div class="color-box" id="brown" onclick="changeColor('brown')">brown</div>
+    <div class="color-box" id="orange" onclick="changeColor('orange')">orange</div>
+  </div>
+  <div class="color-box-container">
+    <div class="color-box" id="purple" onclick="changeColor('purple')">purple</div>
+    <div class="color-box" id="magenta" onclick="changeColor('magenta')">magenta</div>
+    <div class="color-box" id="red" onclick="changeColor('red')">red</div>
+    <div class="color-box" id="grey" onclick="changeColor('grey')">grey</div>
+    <div class="color-box" id="pink" onclick="changeColor('pink')">pink</div>
+  </div>
+<!---------------------Script for Color Software------------------>
+  <script>
+    var completedColors = [];
+    var selectedColorBox = document.getElementById('selected-color-box');
+    
+    function changeColor(color) {
+      selectedColorBox.style.backgroundColor = color;
+      
+      if (!completedColors.includes(color)) {
+        completedColors.push(color);
+        if (completedColors.length === 10) {
+          setTimeout(function() {
+            alert('Congratulations! You have successfully completed the course on basic colors.');
+          }, 0);
+        } else {
+          setTimeout(function() {
+            alert('You have just learned how to use the color ' + color + '.');
+          }, 0);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+  </div>
+
+ 
+
+
+</body>
+</html>
